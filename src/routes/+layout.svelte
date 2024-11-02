@@ -1,29 +1,35 @@
 <script>
     import "../app.css";
     import Navbar from "./_components/Navbar.svelte";
+    import {page} from "$app/stores";
 
-    let {children} = $props();
-
-    let guis = [
-        {link: 'counter', name: 'Counter'},
-        {link: 'temperature_converter', name: 'Temperature Converter'},
-        {link: 'flight_booker', name: 'Flight Booker'},
-        {link: 'timer', name: 'Timer'},
-        {link: 'crud', name: 'CRUD'},
-        {link: 'circle_drawer', name: 'Circle Drawer'},
-        {link: 'cells', name: 'Cells'}
-    ];
+    let {data, children} = $props();
 </script>
 
-<Navbar items={guis}/>
+<svelte:head>
+    {#if $page.data.title}
+        <title>{$page.data.title} | 7guis</title>
+    {:else if $page.error}
+        <title>{$page.status} {$page.error.message}</title>
+    {:else}
+        <title>7guis</title>
+    {/if}
+</svelte:head>
 
-{@render children()}
+<Navbar items={data.links}/>
+
+<section class="flex flex-col items-center justify-center">
+    {@render children()}
+</section>
 
 <style lang="postcss">
+    :global(*) {
+        @apply m-0 p-0 box-border;
+    }
 
     :global(body) {
         background-color: theme(colors.custom-color.500);
-        color: theme(colors.custom-color.200);
+        color: theme(colors.custom-color.100);
         font-family: "Anek Devanagari", sans-serif;
     }
 </style>

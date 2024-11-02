@@ -7,10 +7,6 @@
     const online = typeof navigator !== "undefined" ? navigator.onLine : false;
 </script>
 
-<svelte:head>
-    <title>{$page.status} {$page.error.message}</title>
-</svelte:head>
-
 <div class="container">
     {#if online}
         {#if $page.status === 404}
@@ -37,7 +33,7 @@
 
 <style lang="postcss">
     .container {
-        @apply border-8 border-black w-screen h-screen flex flex-col justify-center items-center;
+        @apply w-screen h-screen flex flex-col justify-center items-center;
     }
 
     h1, p {

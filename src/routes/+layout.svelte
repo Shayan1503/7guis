@@ -7,6 +7,8 @@
 </script>
 
 <svelte:head>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
     {#if $page.data.title}
         <title>{$page.data.title} | 7guis</title>
     {:else if $page.error}
@@ -31,5 +33,7 @@
         background-color: theme(colors.custom-color.500);
         color: theme(colors.custom-color.100);
         font-family: "Anek Devanagari", sans-serif;
+
+        @apply overflow-x-hidden;
     }
 </style>

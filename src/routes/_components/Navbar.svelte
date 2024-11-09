@@ -9,7 +9,7 @@
         {link: '/', name: 'Show'}
     ];
 
-    let {items} = $props();
+    let {items = default_items} = $props();
 </script>
 
 {#snippet link(options)}
@@ -20,18 +20,14 @@
 
 <nav class="navbar">
     <a href="/" id="logo">
-        <img class='h-10 mr-[0.5rem] px-1' src={img} alt="Logo">
+        <img class='h-10' src={img} alt="Logo">
     </a>
-    {#if items}
-        {@render link(items)}
-    {:else}
-        {@render link(default_items)}
-    {/if}
+    {@render link(items)}
 </nav>
 
 <style lang="postcss">
     .navbar {
-        @apply flex justify-start items-center py-2 h-auto bg-custom-color-200 text-custom-color-400;
+        @apply sticky top-0 left-0 z-[1] w-screen flex justify-start items-center py-2 h-auto bg-custom-color-200 text-custom-color-400;
     }
 
     .navbar a {

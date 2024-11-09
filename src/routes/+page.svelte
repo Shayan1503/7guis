@@ -10,7 +10,7 @@
 
 <Header title={header_title} content={header_content}/>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10 max-w-4xl mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10 max-w-4xl mx-auto">
     {#each data.guis as content}
         <Card content={content}/>
     {/each}

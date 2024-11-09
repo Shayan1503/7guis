@@ -11,7 +11,7 @@
 
     const counterinfo = {
         title: 'Counter',
-        source: 'https://github.com/Shayan1503/7guis',
+        source: 'counter',
         content: counter,
         w: 'w-60'
     }

@@ -1,38 +1,30 @@
-# create-svelte
+# 7guis
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+---
 
-## Creating a project
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-If you're seeing this, you've probably already done this step. Congrats!
+This project is the implementation of the [7 GUIs](https://eugenkiss.github.io/7guis/) tasks in SvelteKit.
+
+<img src="static/homepage.png" alt="homepage">
+
+The main point of this project is for me to learn SvelteKit and how to build a website with it. If you find any issue or 
+have any suggestions, please feel free to open an issue or a pull request.
+
+## Installation
+
+If you wish to build the project locally and see what my website looks like, you can run the following command to first
+get my project on your system:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+git clone https://github.com/Shayan1503/7guis.git
+cd 7guis
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install the dependencies with `npm install` (or `pnpm install` or `yarn`) and start the development server:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+In case the website doesn't open automatically, you can open it manually by going to `http://localhost:3000` on your browser.

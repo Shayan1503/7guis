@@ -31,7 +31,6 @@
 
     :global(body) {
         background-color: theme(colors.custom-color.500);
-        color: theme(colors.custom-color.100);
         font-family: "Anek Devanagari", sans-serif;
 
         @apply overflow-x-hidden;

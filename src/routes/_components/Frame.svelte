@@ -1,5 +1,5 @@
 <script>
-    let {title = 'Title', source, content, w='w-50'} = $props();
+    let {title = 'Title', source, content, w='w-fit'} = $props();
     let sourceCode = 'https://github.com/Shayan1503/7guis/tree/main/src/routes/' + source;
 </script>
 
@@ -23,7 +23,7 @@
             </button>
         </div>
     </div>
-    <div class="flex items-center justify-between p-4">
+    <div class="flex items-center justify-center p-4">
         {@render content()}
     </div>
 </div>

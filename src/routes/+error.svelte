@@ -33,7 +33,7 @@
 
 <style lang="postcss">
     .container {
-        @apply w-screen h-screen flex flex-col justify-center items-center;
+        @apply w-screen h-screen flex flex-col justify-center items-center text-custom-color-200;
     }
 
     h1, p {

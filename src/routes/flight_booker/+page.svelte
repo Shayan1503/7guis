@@ -79,13 +79,13 @@
 <Header title="Flight Booker"/>
 
 {#snippet booker()}
-    <div class="flex flex-col items-center justify-center">
-        <select bind:value={selected} aria-label="Flight type">
+    <div class="flex flex-col items-center justify-center gap-4">
+        <select bind:value={selected} aria-label="Flight type" class="w-64">
             <option value="one-way">one-way flight</option>
             <option value="return">return flight</option>
         </select>
 
-        <div>
+        <div class="grid grid-cols-2 items-center gap-4 w-64">
             <label for="departure">Departure</label>
             <input type="text"
                    id="departure"
@@ -94,11 +94,10 @@
                    aria-invalid="{!isValidDate(departure)}"
                    aria-label="Departure date"
             />
-        </div>
-        {#if !isValidDate(departure)}
-            <p class="error">Invalid date format. Use DD.MM.YYYY.</p>
-        {/if}
-        <div>
+            {#if !isValidDate(departure)}
+                <p class="error col-span-2 text-center">Invalid date format. Use <code>DD.MM.YYYY</code>.</p>
+            {/if}
+
             <label for="return">Return</label>
             <input type="text"
                    id="return"
@@ -108,32 +107,28 @@
                    aria-invalid="{!isValidDate(destination)}"
                    aria-label="Return date"
             />
+            {#if !isValidDate(destination)}
+                <p class="error col-span-2 text-center">Invalid date format. Use <code>DD.MM.YYYY</code>.</p>
+            {/if}
         </div>
-        {#if !isValidDate(destination)}
-            <p class="error">Invalid date format. Use DD.MM.YYYY.</p>
-        {/if}
 
-        <Button isDisabled={!isBookable()} text="Book" clickEvent={book}/>
+        <Button isDisabled={!isBookable()} text="Book" clickEvent={book} class="w-64"/>
     </div>
 {/snippet}
 
 <Frame {...flightBookerInfo}/>
 
 <style lang="postcss">
-    input {
-        @apply border rounded text-center p-1 m-2;
+    input, select {
+        @apply border rounded text-center p-2;
     }
 
     input[disabled] {
         @apply bg-gray-200 text-gray-500;
     }
 
-    select {
-        @apply border rounded text-center;
-    }
-
     label {
-        @apply text-lg font-medium;
+        @apply text-custom-color-400 text-base font-medium;
     }
 
     .invalid {
@@ -141,7 +136,6 @@
     }
 
     .error {
-        @apply text-red-600 text-sm;
+        @apply text-red-600 text-sm mt-1;
     }
-
 </style>

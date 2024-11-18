@@ -1,4 +1,5 @@
 <script>
+    import { base } from '$app/paths';
     import img from '$lib/images/favicon_dark_transparent.png';
 
     let default_items = [
@@ -14,12 +15,12 @@
 
 {#snippet link(options)}
     {#each options as option}
-        <a href={option.link}>{option.name}</a>
+        <a href={base + "/" + option.link}>{option.name}</a>
     {/each}
 {/snippet}
 
 <nav class="navbar">
-    <a href="/" id="logo">
+    <a href={base} id="logo">
         <img class='h-10' src={img} alt="Logo">
     </a>
     {@render link(items)}

@@ -14,3 +14,5 @@ export function load() {
         guis
     }
 }
+
+export const prerender = true;

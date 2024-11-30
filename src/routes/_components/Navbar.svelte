@@ -20,7 +20,7 @@
 {/snippet}
 
 <nav class="navbar">
-    <a href={base} id="logo">
+    <a href={base || "/"} id="logo">
         <img class='h-10' src={img} alt="Logo">
     </a>
     {@render link(items)}

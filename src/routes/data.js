@@ -13,12 +13,12 @@ export const guis = [
         link: 'flight_booker',
         name: 'Flight Booker',
         description: 'Book a one-way or return flight.'
-    }
-    // {
-    //     link: 'timer',
-    //     name: 'Timer',
-    //     description: 'A timer with start, stop, and reset functionalities.'
-    // },
+    },
+    {
+        link: 'timer',
+        name: 'Timer',
+        description: 'A timer with start, stop, and reset functionalities.'
+    },
     // {
     //     link: 'crud',
     //     name: 'CRUD',

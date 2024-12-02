@@ -1,6 +1,6 @@
 <script>
-    import Header from '../_components/Header.svelte';
-    import Frame from '../_components/Frame.svelte';
+    import Header from '$lib/components/Header.svelte';
+    import Frame from '$lib/components/Frame.svelte';
 
     let celsius = $state('');
     let fahrenheit = $state('');

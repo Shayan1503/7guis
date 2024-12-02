@@ -1,7 +1,7 @@
 <script>
-    import Header from '../_components/Header.svelte';
-    import Frame from '../_components/Frame.svelte';
-    import Button from '../_components/Button.svelte';
+    import Header from '$lib/components/Header.svelte';
+    import Frame from '$lib/components/Frame.svelte';
+    import Button from '$lib/components/Button.svelte';
 
     let selected = $state('one-way');
     let departure = $state(getToday());

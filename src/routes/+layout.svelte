@@ -1,6 +1,6 @@
 <script>
     import "../app.css";
-    import Navbar from "./_components/Navbar.svelte";
+    import Navbar from "$lib/components/Navbar.svelte";
     import {page} from "$app/stores";
 
     let {data, children} = $props();

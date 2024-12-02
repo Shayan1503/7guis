@@ -1,6 +1,6 @@
 <script>
-    import Header from './_components/Header.svelte';
-    import Card from './_components/Card.svelte';
+    import Header from '$lib/components/Header.svelte';
+    import Card from '$lib/components/Card.svelte';
 
     let {data} = $props();
 

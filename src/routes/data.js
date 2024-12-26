@@ -2,7 +2,7 @@ export const guis = [
     {
         link: 'counter',
         name: 'Counter',
-        description: 'A simple counter that can be incremented or decremented.'
+        description: 'A simple click-counter.'
     },
     {
         link: 'temperature_converter',
@@ -17,17 +17,17 @@ export const guis = [
     {
         link: 'timer',
         name: 'Timer',
-        description: 'A timer with start, stop, and reset functionalities.'
+        description: 'A timer with reset functionality where you can modify the duration.'
     },
-    // {
-    //     link: 'crud',
-    //     name: 'CRUD',
-    //     description: 'Basic create, read, update, delete operations.'
-    // },
+    {
+        link: 'crud',
+        name: 'CRUD',
+        description: 'Basic create, read, update, delete operations.'
+    },
     // {
     //     link: 'circle_drawer',
     //     name: 'Circle Drawer',
-    //     description: 'Draw circles on a canvas and adjust their positions.'
+    //     description: 'Draw circles on a canvas and adjust their size.'
     // },
     // {
     //     link: 'cells',

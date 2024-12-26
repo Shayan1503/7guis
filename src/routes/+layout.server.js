@@ -1,6 +1,5 @@
 import {guis} from './data.js';
 
-
 export function load() {
     return {
         links: guis.map((gui) => ({

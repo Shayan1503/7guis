@@ -61,12 +61,11 @@
     }
 
     function handleUpdate() {
-        users.map(user => {
-            if (user.id === selected) {
-                user.firstname = firstname.trim();
-                user.lastname = lastname.trim();
-            }
-        });
+        const user = users.find((user) => user.id === selected);
+        if (user) {
+            user.firstname = firstname.trim();
+            user.lastname = lastname.trim();
+        }
         selected = undefined;
     }
 
@@ -80,8 +79,10 @@
         }
 
         if (index < 0) {
-            throw new Error(`User with id ${selected} not found.`);
+            console.error(`User with id ${selected} not found.`);
+            return;
         }
+
 
         users.splice(index, 1);
         selected = undefined;
@@ -111,26 +112,29 @@
                     <option value={user.id}>{user.lastname}, {user.firstname}</option>
                 {/each}
             </select>
-            <div class="grid">
+            <fieldset class="border p-4 rounded flex flex-col gap-4">
+                <legend class="text-custom-color-400 text-base font-medium">User Details</legend>
                 <label for="firstname">
                     Name:
-                    <input id="firstname"
-                           type="text"
-                           aria-label="Name"
-                           bind:value={firstname}
-                    >
+                    <input
+                            id="firstname"
+                            type="text"
+                            aria-label="Name"
+                            bind:value={firstname}
+                    />
                 </label>
                 <label for="lastname">
                     Surname:
-                    <input id="lastname"
-                           type="text"
-                           aria-label="Surname"
-                           bind:value={lastname}
-                    >
+                    <input
+                            id="lastname"
+                            type="text"
+                            aria-label="Surname"
+                            bind:value={lastname}
+                    />
                 </label>
-            </div>
+            </fieldset>
         </div>
-        <div class="grid grid-cols-3 items-center">
+        <div class="grid grid-cols-3 items-center gap-4 justify-center">
             <Button text="Create" clickEvent={handleCreate} isDisabled={firstname === '' || lastname === ''}/>
             <Button text="Update" clickEvent={handleUpdate}
                     isDisabled={selected === undefined || firstname === '' || lastname === ''}/>
@@ -144,7 +148,7 @@
 <style lang="postcss">
 
     input {
-        @apply border rounded text-center p-1;
+        @apply border rounded px-2 py-1 text-sm w-full;
     }
 
     label {

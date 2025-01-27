@@ -24,11 +24,11 @@ export const guis = [
         name: 'CRUD',
         description: 'Basic create, read, update, delete operations.'
     },
-    // {
-    //     link: 'circle_drawer',
-    //     name: 'Circle Drawer',
-    //     description: 'Draw circles on a canvas and adjust their size.'
-    // },
+    {
+        link: 'circle_drawer',
+        name: 'Circle Drawer',
+        description: 'Draw circles on a canvas and adjust their size.'
+    },
     // {
     //     link: 'cells',
     //     name: 'Cells',

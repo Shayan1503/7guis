@@ -99,8 +99,6 @@
         }
         showSlider = false;
     }
-
-    $inspect(undoStack);
 </script>
 
 <Header title="Circle Drawer"/>

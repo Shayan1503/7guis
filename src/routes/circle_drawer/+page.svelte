@@ -64,7 +64,8 @@
             removeCircle(action.element);
         }
         if(action.type === "change_radius") {
-            action.element.radius = action.oldRadius;
+            const circle = getCircle(action.element.x, action.element.y);
+            circle.radius = action.oldRadius;
         }
     }
 
@@ -76,7 +77,8 @@
             circles.push(action.element);
         }
         if(action.type === "change_radius") {
-            action.element.radius = action.newRadius;
+            const circle = getCircle(action.element.x, action.element.y);
+            circle.radius = action.newRadius;
         }
     }
 
@@ -98,6 +100,16 @@
             });
         }
         showSlider = false;
+    }
+
+    function getCircle(cx, cy) {
+        const index = circles.findIndex(c => c.x === cx && c.y === cy);
+
+        if(index > -1) {
+            return circles[index];
+        }
+
+        throw new Error("Cannot find circle: x = " + cx + ", y = " + cy);
     }
 </script>
 
